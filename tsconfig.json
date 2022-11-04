@@ -28,7 +28,8 @@
       "@interfaces/*": ["interfaces/*"],
       "@config/*": ["config/*"],
       "@utils/*": ["utils/*"],
-    },
+      "@assets/*": ["assets/*"],
+    }
   },
   "include": [
     "src"
