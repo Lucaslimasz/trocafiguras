@@ -3,6 +3,28 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     justify-content: center;
+
+    @media(max-width:49.125rem){
+        p{
+            display: none;
+        }
+        
+        Header{
+            flex-direction: column;
+        }
+        
+        .ContainerButtons{
+            justify-content: center;
+            margin-top: 1.4rem;
+            
+
+            .ButtonLogout{
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+            }
+        }
+    }
 `
 
 export const Header = styled.header`
@@ -20,13 +42,13 @@ export const SectionContainer = styled.div`
     align-items: center;
 
     img{
-        width: 175px;
-        height: 60px;
+        width: 11rem;
+        height: 3.75rem;
     }
 
     p{
-        padding: 0 50px;
-        font-size: 20px;
+        padding: 0 3.125rem;
+        font-size: 1.25rem;
         color: var(--light);
     }
 
@@ -42,12 +64,12 @@ export const SectionContainer = styled.div`
         margin-left: 1.5rem;
 
         img{
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
 
     .ButtonCardRegister{
-        width: 264px;
+        width: 16.5rem;
     }
 `;

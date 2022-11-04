@@ -18,21 +18,23 @@ export default function Header() {
   return (
     <S.Container>
         <S.Header>
-        <S.SectionContainer>
-          <a href='/'>
-            <img src={Logo} alt="Logo Troca Figuras" /> 
-          </a>
-          <p>Bem Vindo {name} </p>
-        </S.SectionContainer>
+          <S.SectionContainer>
+            <a href='/'>
+              <img src={Logo} alt="Logo Troca Figuras" /> 
+            </a>
+            <p>Bem Vindo {name} </p>
+          </S.SectionContainer>
 
-        <S.SectionContainer>
-          <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={() => handleRegisterCard()}>Cadastrar nova carta</Button>
-          <button className='ButtonLogout' onClick={() => handleLogout()}>
-            <img src={Power} alt="Logout Icon" />
-          </button>
-        </S.SectionContainer>
+          <S.SectionContainer className='ContainerButtons'>
+            <div>
+              <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={() => handleRegisterCard()}>Cadastrar nova carta</Button>
+            </div>  
+
+            <button className='ButtonLogout' onClick={() => handleLogout()}>
+              <img src={Power} alt="Logout Icon" />
+            </button>
+          </S.SectionContainer>
       </S.Header>
-
     </S.Container>
 );
 } 
