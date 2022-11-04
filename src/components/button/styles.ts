@@ -14,9 +14,13 @@ export const Container = styled.button<IColors>`
     font-weight: bold;
     border-radius: 0.5rem;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     ${props => css`
-            color: ${props.color};
-            background: ${props.background};
-        `
+      color: ${props.color};
+      background: ${props.background};
+    `
   }
 `
