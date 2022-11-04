@@ -1,7 +1,11 @@
 import { Router } from './routes/router';
 
+import { AuthProvider } from './hooks/useAuth'
+
 export default function TrocaFiguras() {
   return (
-    <Router />
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
   );
 }
