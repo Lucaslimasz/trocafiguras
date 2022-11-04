@@ -1,21 +1,40 @@
 import { useState } from 'react'
 import * as S from './styles';
 import Logo from '../../assets/logo.png';
+import Power from '../../assets/icons/power.svg'
+import Button from '../button';
 
 export default function Header() {
-    const [name, setName] = useState('Leonardo')
-    return (
-        <S.Container>
-            <div>
-                <img src={Logo} alt="Logo Troca Figuras" />
-                <p>Bem Vindo {name} </p>
-            </div>
+  const [name, setName] = useState('Leonardo')
 
-            <div>
-                <button>Cadastrar nova carta</button>
-                <button>Cadastrar nova carta</button>
-            </div>
+  function handleLogout(){
+    alert('Deslogando')
+  }
 
-        </S.Container>
+  function handleRegisterCard(){
+    alert('Cadastrando Cartas')
+  }
+
+  return (
+    <S.Container>
+        <S.Header>
+          <S.SectionContainer>
+            <a href='/'>
+              <img src={Logo} alt="Logo Troca Figuras" /> 
+            </a>
+            <p>Bem Vindo {name} </p>
+          </S.SectionContainer>
+
+          <S.SectionContainer className='ContainerButtons'>
+            <div>
+              <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={() => handleRegisterCard()}>Cadastrar nova carta</Button>
+            </div>  
+
+            <button className='ButtonLogout' onClick={() => handleLogout()}>
+              <img src={Power} alt="Logout Icon" />
+            </button>
+          </S.SectionContainer>
+      </S.Header>
+    </S.Container>
 );
-}
+} 
