@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: auto;
+
   div {
     width: 100%;
   }
@@ -16,6 +17,7 @@ export const Container = styled.div`
   h1 {
     margin-bottom: 2rem;
     font-size: 2.25rem;
+    font-weight: 500;
     color: var(--light);
   }
 
@@ -26,5 +28,34 @@ export const Container = styled.div`
     width: 100%;
 
     gap: 0.75rem;
+
+    button {
+      margin-top: 0.375rem;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-top: 2.5rem;
+
+    strong {
+      color: var(--light-900);
+    }
+  }
+
+  @media (max-width: 1000px){
+    max-width: 100%;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    > img {
+      display: none;
+    }
   }
 `;

@@ -1,8 +1,11 @@
+import { forwardRef, ForwardRefRenderFunction } from 'react';
 
 import * as S from './styles';
 
-export default function Input ({...rest}){
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, any> = ({...rest}, ref) => {
   return (
-    <S.Container {...rest} />
+    <S.Container {...rest} ref={ref} />
   );
 }
+
+export default oninput = forwardRef(InputBase)
