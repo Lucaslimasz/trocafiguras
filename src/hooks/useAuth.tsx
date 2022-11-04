@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, createContext } from 'react';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
@@ -33,6 +33,8 @@ export const AuthProvider = ({ children }: any) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     (() => {
       const sessionToken = sessionStorage.getItem('@auth/id');
@@ -59,11 +61,13 @@ export const AuthProvider = ({ children }: any) => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((res: any) => {
+        setIsLogged(true)
         sessionStorage.setItem('@auth/id', JSON.stringify(res.user.accessToken));
         sessionStorage.setItem('@auth/name', JSON.stringify(res.user.displayName.split('/')[0]));
         sessionStorage.setItem('@auth/CEP', JSON.stringify(res.user.displayName.split('/')[1]));
         sessionStorage.setItem('@auth/email', JSON.stringify(res.user.email));
-        return <Navigate to='home' />
+        navigate('/home')
+        console.log(isLogged)
       }).catch(() => {
         toast.error('Usuário ou Senha Invalido')
       }).finally(() => {
@@ -78,11 +82,10 @@ export const AuthProvider = ({ children }: any) => {
     if (password === confirm_password) {
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
-          console.log(auth)
           updateProfile(auth.currentUser, { displayName: `${name}/${CEP}` })
-            .then(() => console.log('atualizado'))
+            .then(() => {
+            })
             .catch((err: any) => console.log(err))
-          window.location.reload();
         }).catch((err) => {
           const message = err.toString().split('/')[1]?.split('-').toString().replaceAll(',', ' ').replaceAll(')', '');
           toast.error(message)
