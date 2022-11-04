@@ -7,10 +7,10 @@ interface IPropsButton extends ButtonHTMLAttributes<HTMLButtonElement>{
     children: ReactNode;
 }
 
-export default function Button({color, bg, children}: IPropsButton){
+export default function Button({color, bg, children, ...rest}: IPropsButton){
     return(
         <div>
-            <S.Container color={color} background={bg}>
+            <S.Container color={color} background={bg} {...rest}>
                 {children}
             </S.Container>
         </div>
