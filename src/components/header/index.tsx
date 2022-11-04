@@ -5,36 +5,36 @@ import Power from '../../assets/icons/power.svg'
 import Button from '../button';
 
 export default function Header() {
-  const [name, setName] = useState('Leonardo')
+  const name = 'Leonardo'
 
-  function handleLogout(){
+  function handleLogout() {
     alert('Deslogando')
   }
 
-  function handleRegisterCard(){
+  function handleRegisterCard() {
     alert('Cadastrando Cartas')
   }
 
   return (
     <S.Container>
-        <S.Header>
-          <S.SectionContainer>
-            <a href='/'>
-              <img src={Logo} alt="Logo Troca Figuras" /> 
-            </a>
-            <p>Bem Vindo {name} </p>
-          </S.SectionContainer>
+      <S.Header>
+        <S.SectionContainer>
+          <a href='/'>
+            <img src={Logo} alt="Logo Troca Figuras" />
+          </a>
+          <p>Bem Vindo {name} </p>
+        </S.SectionContainer>
 
-          <S.SectionContainer className='ContainerButtons'>
-            <div>
-              <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={() => handleRegisterCard()}>Cadastrar nova carta</Button>
-            </div>  
+        <S.SectionContainer className='ContainerButtons'>
+          <div>
+            <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={() => handleRegisterCard()}>Cadastrar nova carta</Button>
+          </div>
 
-            <button className='ButtonLogout' onClick={() => handleLogout()}>
-              <img src={Power} alt="Logout Icon" />
-            </button>
-          </S.SectionContainer>
+          <button className='ButtonLogout' onClick={() => handleLogout()}>
+            <img src={Power} alt="Logout Icon" />
+          </button>
+        </S.SectionContainer>
       </S.Header>
     </S.Container>
-);
+  );
 } 
