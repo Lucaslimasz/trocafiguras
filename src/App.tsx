@@ -1,10 +1,7 @@
-import React from 'react';
+import { Router } from './routes/router';
 
-// import Auth from './pages/auth'
-import Header from './components/header';
-
-export default function TrocaFiguras () {
+export default function TrocaFiguras() {
   return (
-    <Header />
+    <Router />
   );
 }

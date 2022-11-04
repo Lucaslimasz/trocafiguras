@@ -1,8 +1,8 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
-interface IColors{
-    color: string;
-    background: string;
+interface IColors {
+  color: string;
+  background: string;
 }
 
 export const Container = styled.button<IColors>`
@@ -14,10 +14,13 @@ export const Container = styled.button<IColors>`
     font-weight: bold;
     border-radius: 0.5rem;
 
-    ${
-        props => css`
-            color: ${props.color};
-            background: ${props.background};
-        `
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ${props => css`
+      color: ${props.color};
+      background: ${props.background};
+    `
+  }
 `
