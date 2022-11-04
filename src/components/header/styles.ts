@@ -31,7 +31,7 @@ export const Header = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 2rem 0;
     max-width: 70rem;
     width: 100%;
 `; 
