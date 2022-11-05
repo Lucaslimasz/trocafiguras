@@ -81,9 +81,17 @@ export const AuthProvider = ({ children }: any) => {
 
     if (password === confirm_password) {
       createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
+        .then((res: any) => {
+          console.log(res)
+          setIsLogged(true)
+          sessionStorage.setItem('@auth/id', JSON.stringify(res.user.accessToken));
+          sessionStorage.setItem('@auth/name', JSON.stringify(name));
+          sessionStorage.setItem('@auth/CEP', JSON.stringify(CEP));
+          sessionStorage.setItem('@auth/email', JSON.stringify(email));
+          navigate('/home')
           updateProfile(auth.currentUser, { displayName: `${name}/${CEP}` })
             .then(() => {
+              console.log('updated user!')
             })
             .catch((err: any) => console.log(err))
         }).catch((err) => {
