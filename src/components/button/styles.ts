@@ -11,7 +11,6 @@ export const Container = styled.button<IColors>`
     background-color: var(--green);
     color: var(--dark-green);
     font-size: 1.125rem;
-    font-weight: bold;
     border-radius: 0.5rem;
 
     display: flex;

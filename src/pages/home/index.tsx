@@ -1,13 +1,16 @@
-import { useAuth } from 'hooks/useAuth';
+
+import * as S from './styles';
+
+import Header from '../../components/header';
+import Location from '../../components/location';
 
 const Home = () => {
-  const { signOut } = useAuth();
 
   return (
-    <>
-      <h1>Logado</h1>
-      <button onClick={signOut}>sair</button>
-    </>
+    <S.Container>
+      <Header />
+      <Location />
+    </S.Container>
   );
 }
 

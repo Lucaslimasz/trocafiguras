@@ -22,6 +22,7 @@ interface IAuthProvider {
   isLogged: boolean;
   user: IUser | null;
   signOut: () => void;
+  auth: any;
 }
 
 export const AuthContext = createContext<IAuthProvider>({} as IAuthProvider);
@@ -85,7 +86,7 @@ export const AuthProvider = ({ children }: any) => {
           console.log(res)
           setIsLogged(true)
           sessionStorage.setItem('@auth/id', JSON.stringify(res.user.accessToken));
-          sessionStorage.setItem('@auth/name', JSON.stringify(name));
+          sessionStorage.setItem('@auth/name', name);
           sessionStorage.setItem('@auth/CEP', JSON.stringify(CEP));
           sessionStorage.setItem('@auth/email', JSON.stringify(email));
           navigate('/home')
@@ -112,7 +113,7 @@ export const AuthProvider = ({ children }: any) => {
   }
 
   return (
-    <AuthContext.Provider value={{ isLoading, signIn, registerAuth, isLogged, user, signOut }}>
+    <AuthContext.Provider value={{ isLoading, signIn, registerAuth, isLogged, user, signOut, auth }}>
       {children}
     </AuthContext.Provider>
   )
