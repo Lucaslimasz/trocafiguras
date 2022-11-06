@@ -12,6 +12,7 @@ export const Container = styled.div`
     max-width: 70rem;
     width: 100%;
     margin-top: 4.375rem;
+    padding: 0 0.75rem;
 
     color: var(--light);
   }
