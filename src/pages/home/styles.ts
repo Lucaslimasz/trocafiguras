@@ -12,6 +12,7 @@ export const Container = styled.div`
     max-width: 70rem;
     width: 100%;
     margin-top: 4.375rem;
+    padding: 0 0.75rem;
 
     color: var(--light);
   }
@@ -43,4 +44,14 @@ export const GridCards = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
+
+  @media(max-width:1000px){
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+
+  }
+  @media(max-width:480px){
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.4rem;
+  }
 `
