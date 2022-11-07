@@ -42,7 +42,6 @@ export default function Location() {
 
   const getNewCEP = async () => {
     const response = window.prompt('type here');
-    console.log(response)
     await updateCep(response)
     window.location.reload();
   }

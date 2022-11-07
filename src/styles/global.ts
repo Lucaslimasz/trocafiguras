@@ -11,7 +11,7 @@ export default createGlobalStyle`
     --green-900: #83BF1D;
     --green-600: #009C3B;
 
-    --gradient: linear-gradient(99.67deg, #FFDF00 -4.24%, #83BF1D 48.32%, #009C3B 104.26%);;
+    --gradient: linear-gradient(99.67deg, rgba(255,223,0,0.5) 0%, rgba(0,156,59,0.5) 100%);;
   }
 
   *{
@@ -48,6 +48,34 @@ export default createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+  .react-modal {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: 0 0.75rem;
+    background: var(--green-dark);
+    padding: 5rem;
+    border-radius: 0.24rem;
+    outline: none;
+  }
+
+  .select-card {
+    padding: 2rem;
+  }
+
+  .react-modal-content {
+    background: var(--gradient);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media(max-width: 1080px){
     html{
       font-size: 93.75%;
