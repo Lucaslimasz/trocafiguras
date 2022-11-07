@@ -19,10 +19,6 @@ export default function Header({ openModalRegister }: HeaderProps) {
     setName(nameUser)
   }, [])
 
-  function handleRegisterCard() {
-    alert('Cadastrando Cartas')
-  }
-
   return (
     <S.Container>
       <S.Header>

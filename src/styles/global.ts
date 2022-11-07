@@ -74,6 +74,8 @@ export default createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    z-index: 1000;
   }
 
   @media(max-width: 1080px){
