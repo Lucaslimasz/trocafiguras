@@ -6,7 +6,11 @@ import Button from '../button';
 import { useAuth } from '../../hooks/useAuth';
 import { useEffect, useState } from 'react';
 
-export default function Header() {
+interface HeaderProps {
+  openModalRegister: () => void;
+}
+
+export default function Header({ openModalRegister }: HeaderProps) {
   const [name, setName] = useState<string>('');
   const { signOut } = useAuth();
 
@@ -31,7 +35,7 @@ export default function Header() {
 
         <S.SectionContainer className='ContainerButtons'>
           <div>
-            <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={() => handleRegisterCard()}>Cadastrar nova carta</Button>
+            <Button bg='var(--green-600)' color='var(--light)' className='ButtonCardRegister' onClick={openModalRegister}>Cadastrar nova carta</Button>
           </div>
 
           <button className='ButtonLogout' onClick={signOut}>

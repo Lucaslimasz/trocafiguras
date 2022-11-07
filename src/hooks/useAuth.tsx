@@ -83,7 +83,6 @@ export const AuthProvider = ({ children }: any) => {
     if (password === confirm_password) {
       createUserWithEmailAndPassword(auth, email, password)
         .then((res: any) => {
-          console.log(res)
           setIsLogged(true)
           sessionStorage.setItem('@auth/id', JSON.stringify(res.user.accessToken));
           sessionStorage.setItem('@auth/name', name);

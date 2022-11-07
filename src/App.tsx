@@ -1,11 +1,14 @@
 import { Router } from './routes/router';
 
 import { AuthProvider } from './hooks/useAuth'
+import { PostProvider } from './hooks/usePost'
 
 export default function TrocaFiguras() {
   return (
     <AuthProvider>
-      <Router />
+      <PostProvider>
+        <Router />
+      </PostProvider>
     </AuthProvider>
   );
 }
